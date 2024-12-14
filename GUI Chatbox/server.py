@@ -16,7 +16,10 @@ def broadcast(message):
         client.send(message)
 
 def handle(client):
-    pass
+    while True:
+        try:
+            message = client.recv(1024)
+            
     
 
 def receive():
@@ -37,4 +40,3 @@ def receive():
         thread = threading.Thread(target=handle,args=(client,))
         thread.start()
 
-        
